@@ -1,0 +1,36 @@
+package SEleniumPractice;
+
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ChildBrowserPopup {
+
+	public static void main(String[] args) 
+	{
+		System.setProperty("webdriver.gecko.driver", "D:\\selenium-java-4.1.4\\chromedriver_win32\\geckodriver.exe");
+		WebDriver driver= new FirefoxDriver();
+		driver.get("");
+        WebElement Childpopup = driver.findElement(By.xpath(""));
+        Childpopup.click();
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofMillis(2000));
+       Set<String> allpageid = driver.getWindowHandles();
+       
+       Iterator<String> it= allpageid.iterator();
+       String mainpageid = it.next();
+       String childpageid = it.next();
+       
+       driver.switchTo().window(childpageid);
+       driver.findElement(By.xpath("")).sendKeys("xyz");
+       driver.switchTo().window(mainpageid);
+       driver.findElement(By.xpath("")).click();
+       
+	}
+
+}

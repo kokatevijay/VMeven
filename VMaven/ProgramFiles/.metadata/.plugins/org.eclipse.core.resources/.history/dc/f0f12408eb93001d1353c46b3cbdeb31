@@ -1,0 +1,19 @@
+package SEleniumPractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class AlartPopup {
+
+	public static void main(String[] args)
+	{
+		System.setProperty("webdriver.gecko.driver","D:\\selenium-java-4.1.4\\chromedriver_win32\\geckodriver.exe");
+		WebDriver driver= new FirefoxDriver();
+		driver.get("");
+        driver.findElement(By.xpath("")).click();
+        driver.switchTo().alert();
+        
+	}
+
+}

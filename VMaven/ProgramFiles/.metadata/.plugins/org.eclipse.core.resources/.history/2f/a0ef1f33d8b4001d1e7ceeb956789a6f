@@ -1,0 +1,56 @@
+package Test;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class gaming
+{
+	public static void main(String[] args) throws InterruptedException
+	{
+	System.setProperty("webdedriver.chrome,driver", "D:\\selenium-java-4.1.4\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver= new ChromeDriver();
+	driver.get("https://www.flipkart.com/");
+	driver.manage().window().maximize();
+	driver.findElement(By.xpath("//button[@class='_2KpZ6l _2doB4z']")).click();
+	WebElement SearchTab = driver.findElement(By.xpath("//input[@name='q']"));
+	SearchTab.sendKeys("Mobiles");
+	Thread.sleep(2000);
+	
+	WebDriverWait wait= new WebDriverWait(driver, Duration.ofMillis(50000));
+	
+	
+	 driver.findElement(By.xpath("//button[@class='L0Z3Pu']")).click();
+	 
+	
+	  List<WebElement> PrintPrice = driver.findElements(By.xpath("//div[@class='col col-5-12 nlI3QM']"));
+	  wait.until(ExpectedConditions.visibilityOfAllElements(PrintPrice)); 
+	   System.out.print(PrintPrice.size());
+	   
+       for (WebElement webElement : PrintPrice) 
+       {
+           String name = webElement.getText();
+           System.out.println(name);
+       }
+       ArrayList<Integer> allLinks= new ArrayList<>();
+       List<WebElement> data = driver.findElements(By.xpath("//div[@class='col col-5-12 nlI3QM']"));
+       System.out.println("total fonds are =="+data.size());
+       for(int i=0;i<data.size();i++){
+        System.out.println(data.get(i).getText());
+        if(data.get(i).getText().contains("Grand 2"))
+        {
+         String link = data.get(i).getAttribute("href");
+        
+        
+       }
+	  }
+	}
+}
+       

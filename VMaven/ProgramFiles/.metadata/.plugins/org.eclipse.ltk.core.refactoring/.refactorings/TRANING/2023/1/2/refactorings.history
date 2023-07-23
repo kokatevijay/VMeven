@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;TEST_BaceClass&apos; to &apos;TEST_POMClass&apos;&#x0D;&#x0A;- Original project: &apos;TRAINGNG&apos;&#x0D;&#x0A;- Original element: &apos;TRAINGNG/src/TEST_BaceClass&apos;&#x0D;&#x0A;- Renamed element: &apos;TRAINGNG/src/TEST_POMClass&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;TEST_BaceClass&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;TEST_BaceClass" name="TEST_POMClass" qualified="false" references="true" stamp="1673628938994" textual="false" version="1.0"/>
+</session>

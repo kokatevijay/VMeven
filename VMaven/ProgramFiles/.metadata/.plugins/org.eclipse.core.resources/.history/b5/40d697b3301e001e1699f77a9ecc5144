@@ -1,0 +1,16 @@
+package TestBaceClass;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class PolicyBazzarBaceClasse 
+{
+     WebDriver driver;
+	public void LaunchFirefoxBrowser() 
+	{
+		System.setProperty("webdriver.gecko.driver", "D:\\selenium-java-4.1.4\\chromedriver_win32\\geckodriver.exe");
+		driver= new FirefoxDriver();
+		driver.get("https://www.policybazaar.com/");
+	}
+
+}

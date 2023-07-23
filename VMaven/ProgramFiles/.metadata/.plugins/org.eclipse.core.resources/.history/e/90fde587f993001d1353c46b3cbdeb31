@@ -1,0 +1,39 @@
+package SEleniumPractice;
+
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ChildBrowserPopup {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		System.setProperty("webdriver.gecko.driver", "D:\\selenium-java-4.1.4\\chromedriver_win32\\geckodriver.exe");
+		WebDriver driver= new FirefoxDriver();
+		driver.get("https://skpatro.github.io/demo/links/");
+		driver.manage().window().maximize();
+        WebElement Childpopup = driver.findElement(By.name("NewWindow"));
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofMillis(2000));
+        wait.until(ExpectedConditions.visibilityOf(Childpopup));
+        
+        Childpopup.click();
+        Set<String> allpageid = driver.getWindowHandles();
+       Iterator<String> it= allpageid.iterator();
+       String mainpageid = it.next();
+       String childpageid = it.next();
+       
+       driver.switchTo().window(childpageid);
+       driver.manage().window().maximize();
+        Thread.sleep(2000);
+       driver.findElement(By.xpath("//input[@id='the7-search']")).sendKeys("xyz");
+     //  driver.switchTo().window(mainpageid);
+      // driver.findElement(By.xpath("")).click();  
+	}
+}
