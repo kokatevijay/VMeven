@@ -25,7 +25,7 @@ public class TestClass extends BaseClass
 	@BeforeClass
 	  public void LaunchBrowser(@Optional String name) throws InterruptedException, IOException 
 	  {
-	   /* if (name.equals("firefox"))
+	  /*  if (name.equals("firefox"))
 	    {
 		   FirefoxBrowser();	
 		}

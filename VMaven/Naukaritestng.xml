@@ -6,6 +6,7 @@
     <classes>
       <class name="NaukariTestClass.TestClass"></class>
       <class name="NaukariTestClass.TestClass1"></class>
+      <class name="NaukariTestClass.NewTestClass"></class>
     </classes>
   </test> <!-- Naukari -->
 </suite> 
